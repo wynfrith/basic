@@ -1,5 +1,10 @@
 package threads.exercises;
 
+/**
+ * p658
+ * 用各种执行器创建并发任务, 打印fibonacci数组
+ */
+
 import threads.util.Generator;
 import java.util.Arrays;
 import java.util.concurrent.Executors;

@@ -1,5 +1,10 @@
 package threads.exercises;
 
+/**
+ * p658
+ * 用执行器创建多个任务
+ */
+
 import java.util.concurrent.Executors;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;

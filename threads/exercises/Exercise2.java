@@ -6,6 +6,7 @@ import java.util.Arrays;
 
 /**
  * Page 656
+ * 用线程创建多个任务, 打印 fibonacci 数组
  */
 
 class Fibonacci implements Generator<Integer>, Runnable {

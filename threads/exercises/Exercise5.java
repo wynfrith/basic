@@ -1,6 +1,11 @@
-// Callable, 创建有返回值的任务
+// 
 
 package threads.exercises;
+
+/**
+ * p659
+ * 实现可以返回值的Callable接口.通过执行器创建多任务完成Fibnaccio数值加和.
+ */
 
 import java.util.concurrent.*;
 import java.util.*;
@@ -52,6 +57,9 @@ public class Exercise5 {
 		// }
 
 		
+		/**
+		 * 哪个任务先完成就先打印它, 不考虑它的执行顺序, 比较适合用Set收集
+		 */
 		while(list.size() > 0) { // 扫描列表中已完成的任务并将其移除
 			for(Iterator<Future<Integer>> iter = list.iterator(); iter.hasNext();) {
 				Future<Integer> f = iter.next();

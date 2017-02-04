@@ -2,6 +2,7 @@ package threads.exercises;
 
 /**
  * Page 656
+ *  创建多个并发任务 
  */
 
 public class Exercise1 implements Runnable {
