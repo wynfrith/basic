@@ -5,24 +5,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 
-class UnsafeThread implements Runnable{
-
-	 List<Object> list;
-
-	 public UnsafeThread(List<Object> l) {
-	 	list = l;
-	 }
-
-	public void run() {
-		for(int i = 0; i < 100; i++) {
-			// System.out.println(Thread.currentThread() + "  " + i);
-			list.add(new Object());
-		}
-		
-	}
-
-}
-
 public class UnsafeThreadTest {
 
 	
@@ -31,7 +13,10 @@ public class UnsafeThreadTest {
 		// create a pool
 		ExecutorService exec = Executors.newCachedThreadPool();
 		for(int i = 0; i < 100; i++) {
-			exec.execute(new UnsafeThread(list));
+			exec.execute(() -> {
+				for(int j = 0; j < 100; j++) 
+					list.add(new Object());
+			});
 		}
 		exec.shutdown();
 
@@ -44,7 +29,6 @@ public class UnsafeThreadTest {
 
 		System.out.println(list.size());
 	}
-
 
 	public static void main(String[] args) {
 
