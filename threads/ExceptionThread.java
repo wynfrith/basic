@@ -3,6 +3,7 @@ package threads;
 import java.util.concurrent.*;
 
 public class ExceptionThread {
+	// 阻塞并格式化打印
 	public static void print(String s) {
 		try {
 			Thread.sleep(100);
@@ -11,9 +12,10 @@ public class ExceptionThread {
 			e.printStackTrace();
 		}
 	}
-	public static void main(String[] args) throws InterruptedException {
-		System.out.println("未指定异常处理器情况下子线程的异常并没有出入给调用它的线程,而是直接打印到了控制台");
 
+	public static void main(String[] args) throws InterruptedException {
+
+		System.out.println("未指定异常处理器情况下子线程的异常并没有出入给调用它的线程,而是直接打印到了控制台");
 		try {
 			new Thread(new UncaughtExceptionThread()).start();
 		} catch(Exception e) {
